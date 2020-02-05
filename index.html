@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="./styles/main.css" />
+    <title>Rick and Morty API</title>
+  </head>
+  <body>
+    <header>
+      <h1>Search a Rick and Morty character character!</h1>
+    </header>
+
+    <form
+     class="input" id="input">
+      <label class="input__character">
+        Name
+        <input
+        type="text"
+        name="character"
+        id="input__character--name"
+        placeholder="Character Name"
+      />
+    </label>
+      <!-- <input type="text" name="character status" id="input__character--status" placeholder="Character Status">
+      <input type="text" name="Character Specie" id="input__character--specie" placeholder="Character Specie"> -->
+      <button class="input--button" type="submit">
+        Find
+      </button>
+      
+    </form
+    >
+
+    <section class="output">
+    </section class="output">
+
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="./scripts/rick_and_morty_api.js"></script>
+  </body>
+</html>
