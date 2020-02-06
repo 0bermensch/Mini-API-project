@@ -18,34 +18,55 @@ inputSubmit.addEventListener("submit", event => {
       let filteredCharacters = characters.filter(
         character => character.name === searchText
       );
-      displayCharacter(filteredCharacters);
+      console.log(filteredCharacters);
+      {
+        displayCharacter(filteredCharacters);
+      }
     })
     .catch(function(error) {
       // handle error
       console.log(error);
     });
 
-  function displayCharacter(characterInfo) {
+  function displayCharacter([characterInfo]) {
     let characterOutput = document.querySelector(".output");
+
+    let characterNameTitle = document.createElement("h3");
+    characterNameTitle.classList.add("output__character--name--title");
+    characterNameTitle.innerText = "Name";
 
     let characterName = document.createElement("h3");
     characterName.classList.add("output__character--name");
     characterName.innerText = characterInfo.name;
 
+    let characterStatusTitle = document.createElement("h3");
+    characterStatusTitle.classList.add("output__character--status--title");
+    characterStatusTitle.innerText = "Status";
+
     let characterStatus = document.createElement("h3");
     characterStatus.classList.add("output__character--status");
     characterStatus.innerText = characterInfo.status;
 
+    let characterSpeciesTitle = document.createElement("h3");
+    characterSpeciesTitle.classList.add("output__character--species--title");
+    characterSpeciesTitle.innerText = "Species";
+
     let characterSpecie = document.createElement("h3");
-    characterSpecie.classList.add("output__character--specie");
+    characterSpecie.classList.add("output__character--species");
     characterSpecie.innerText = characterInfo.species;
 
-    let characterImage = document.createElement("div");
-    characterImage.classList.add("output__character--image");
-    characterImage.innerText = characterInfo.image;
+    let characterImage = document.createElement("img");
+    let image = characterInfo.image;
+    characterImage.src = image;
 
+    // classList.add("output__character--image");
+    // characterImage.innerText = characterInfo.image;
+
+    characterOutput.appendChild(characterNameTitle);
     characterOutput.appendChild(characterName);
+    characterOutput.appendChild(characterStatusTitle);
     characterOutput.appendChild(characterStatus);
+    characterOutput.appendChild(characterSpeciesTitle);
     characterOutput.appendChild(characterSpecie);
     characterOutput.appendChild(characterImage);
   }
